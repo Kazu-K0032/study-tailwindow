@@ -1,4 +1,8 @@
 {
-  // https://tailwindcss.com/blog/automatic-class-sorting-with-prettier
+  "semi": true,
+  "singleQuote": true,
+  "tabWidth": 2,
+  "trailingComma": "es5",
+  "printWidth": 100,
   "plugins": ["prettier-plugin-tailwindcss"]
 }
