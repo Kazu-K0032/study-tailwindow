@@ -48,35 +48,35 @@ const CalendarPage = () => {
   };
 
   return (
-    <div className="flex h-screen flex-col bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50">
-      <header className="flex flex-col justify-between gap-4 bg-white p-4 sm:flex-row">
-        <h1 className="bg-linear-to-br from-purple-600 to-pink-600 bg-clip-text text-center text-3xl font-bold text-transparent">
+    <div className="flex h-screen flex-col bg-linear-to-br from-indigo-50 via-purple-50 to-pink-50 dark:from-gray-900 dark:via-gray-800 dark:to-gray-900">
+      <header className="flex flex-col justify-between gap-4 bg-white dark:bg-gray-800 p-4 sm:flex-row">
+        <h1 className="bg-linear-to-br from-purple-600 to-pink-600 dark:from-purple-400 dark:to-pink-400 bg-clip-text text-center text-3xl font-bold text-transparent">
           カレンダー
         </h1>
         <div className="flex items-center gap-4">
-          <button className="rounded-lg px-4 py-2 text-purple-600 shadow-sm transition-colors duration-500 hover:bg-purple-50">
+          <button className="rounded-lg px-4 py-2 text-purple-600 dark:text-purple-400 shadow-sm transition-colors duration-500 hover:bg-purple-50 dark:hover:bg-purple-900">
             今日
           </button>
-          <div className="flex items-center gap-4 rounded-lg px-4 py-2 shadow-sm">
-            <button className="flex size-5 items-center justify-center bg-white transition-colors duration-500 hover:bg-purple-50">
+          <div className="flex items-center gap-4 rounded-lg px-4 py-2 shadow-sm bg-white dark:bg-gray-700">
+            <button className="flex size-5 items-center justify-center bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors duration-500 hover:bg-purple-50 dark:hover:bg-purple-800">
               ←
             </button>
-            <span className="">2024年3月</span>
-            <button className="flex size-5 items-center justify-center bg-white transition-colors duration-500 hover:bg-purple-50">
+            <span className="text-gray-700 dark:text-gray-300">2024年3月</span>
+            <button className="flex size-5 items-center justify-center bg-white dark:bg-gray-600 text-gray-700 dark:text-gray-300 transition-colors duration-500 hover:bg-purple-50 dark:hover:bg-purple-800">
               →
             </button>
           </div>
         </div>
       </header>
-      <div className="mx-0.5 my-2 grid flex-1 grid-cols-7 overflow-hidden rounded-2xl bg-white shadow-xl sm:m-4">
+      <div className="mx-0.5 my-2 grid flex-1 grid-cols-7 overflow-hidden rounded-2xl bg-white dark:bg-gray-800 shadow-xl sm:m-4">
         {weekDays.map((day, i) => (
           <div
             key={day}
             className={cn(
-              'border-b border-solid border-gray-200 bg-gray-50/80 text-center',
-              i === 0 && 'text-red-500',
-              i === 6 && 'text-blue-500',
-              i !== 0 && i !== 6 && 'text-gray-500'
+              'border-b border-solid border-gray-200 dark:border-gray-600 bg-gray-50/80 dark:bg-gray-700/80 text-center',
+              i === 0 && 'text-red-500 dark:text-red-400',
+              i === 6 && 'text-blue-500 dark:text-blue-400',
+              i !== 0 && i !== 6 && 'text-gray-500 dark:text-gray-400'
             )}
           >
             {day}
@@ -86,16 +86,16 @@ const CalendarPage = () => {
           <div
             key={day}
             className={cn(
-              'flex flex-col items-center border-r border-b border-solid border-gray-100 p-0 pt-1 sm:items-start sm:p-2 sm:pt-2',
-              day > 31 ? 'bg-gray-50/50' : 'bg-white',
-              todayDate === day && 'ring-2 ring-purple-400 ring-inset'
+              'flex flex-col items-center border-r border-b border-solid border-gray-100 dark:border-gray-600 p-0 pt-1 sm:items-start sm:p-2 sm:pt-2',
+              day > 31 ? 'bg-gray-50/50 dark:bg-gray-700/50' : 'bg-white dark:bg-gray-800',
+              todayDate === day && 'ring-2 ring-purple-400 dark:ring-purple-500 ring-inset'
             )}
           >
             <span
               className={cn(
                 'flex size-6 items-center justify-center rounded-full text-sm sm:size-8 sm:text-base',
-                day > 31 ? 'text-gray-400' : 'text-gray-700',
-                todayDate === day && 'bg-purple-100 font-bold text-purple-600'
+                day > 31 ? 'text-gray-400 dark:text-gray-500' : 'text-gray-700 dark:text-gray-300',
+                todayDate === day && 'bg-purple-100 dark:bg-purple-900 font-bold text-purple-600 dark:text-purple-400'
               )}
             >
               {day <= 31 ? day : day - 31}
@@ -105,12 +105,12 @@ const CalendarPage = () => {
                 <div
                   key={index}
                   className={cn('flex gap-1 rounded-md p-1 text-xs', {
-                    'bg-blue-100 text-blue-700': event.color === 'blue',
-                    'bg-green-100 text-green-700': event.color === 'green',
-                    'bg-purple-100 text-purple-700': event.color === 'purple',
-                    'bg-red-100 text-red-700': event.color === 'red',
-                    'bg-orange-100 text-orange-700': event.color === 'orange',
-                    'bg-indigo-100 text-indigo-700': event.color === 'indigo',
+                    'bg-blue-100 dark:bg-blue-900 text-blue-700 dark:text-blue-300': event.color === 'blue',
+                    'bg-green-100 dark:bg-green-900 text-green-700 dark:text-green-300': event.color === 'green',
+                    'bg-purple-100 dark:bg-purple-900 text-purple-700 dark:text-purple-300': event.color === 'purple',
+                    'bg-red-100 dark:bg-red-900 text-red-700 dark:text-red-300': event.color === 'red',
+                    'bg-orange-100 dark:bg-orange-900 text-orange-700 dark:text-orange-300': event.color === 'orange',
+                    'bg-indigo-100 dark:bg-indigo-900 text-indigo-700 dark:text-indigo-300': event.color === 'indigo',
                   })}
                 >
                   <span className="hidden sm:inline">{event.time}</span>
