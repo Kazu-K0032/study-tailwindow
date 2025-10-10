@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 const UserListPage = () => {
   return (
     <div>
@@ -15,9 +17,12 @@ const UserListPage = () => {
         </div>
         <div className="flex w-64 flex-col justify-between bg-gray-700 px-4 pb-5">
           <div>
-            <img
+            <Image
               src="https://static.kirara-code.net/images/logo_31859b1c-253e-46fc-b954-8ac41aeae82e.png"
               alt="logo"
+              width={120}
+              height={40}
+              style={{ width: 'auto', height: 'auto' }}
             />
             <div className="mt-10 flex flex-col gap-8">
               <button className="group flex gap-4 text-2xl transition-colors duration-500 hover:text-gray-300">
@@ -71,10 +76,13 @@ const UserListPage = () => {
           </h1>
         </header>
         <header className="fixed inset-x-0 top-0 flex h-15 items-center justify-between bg-gray-700 pr-4 sm:hidden">
-          <img
+          <Image
             src="https://static.kirara-code.net/images/logo_31859b1c-253e-46fc-b954-8ac41aeae82e.png"
             alt="logo"
+            width={100}
+            height={40}
             className="h-10 w-25"
+            style={{ width: 'auto', height: 'auto' }}
           />
           <button className="relative h-6 w-8">
             <span className="absolute top-1/2 left-0 h-0.5 w-full -translate-y-2 rounded-full bg-white"></span>
@@ -86,16 +94,16 @@ const UserListPage = () => {
           {[...Array(10)].map((_, index) => (
             <div
               key={index}
-              className="hover:taransition-all flex cursor-pointer items-center gap-4 rounded-lg border border-solid border-gray-100 bg-white p-2 shadow-md duration-500 hover:scale-105 hover:shadow-lg sm:p-6"
+              className="hover:taransition-all flex cursor-pointer items-center gap-3 rounded-lg border border-solid border-gray-100 bg-white p-2 shadow-md duration-500 hover:scale-105 hover:shadow-lg sm:gap-4 sm:p-6"
             >
-              <div className="flex size-8 items-center justify-center rounded-full bg-linear-to-br from-purple-400 to-gray-400 text-white sm:size-12">
+              <div className="flex size-8 items-center justify-center rounded-full bg-linear-to-br from-purple-400 to-gray-400 text-white sm:size-10 md:size-12">
                 1
               </div>
-              <div className="flex-1">
-                <h3 className="text-base font-semibold text-gray-800 sm:text-lg">
+              <div className="flex-1 min-w-0">
+                <h3 className="text-sm font-semibold text-gray-800 sm:text-base md:text-lg">
                   ユーザー１
                 </h3>
-                <p className="line-clamp-2 text-sm text-gray-600">
+                <p className="line-clamp-2 text-xs text-gray-600 sm:text-sm">
                   Lorem, ipsum dolor sit amet
                   consectetur adipisicing elit.
                   Voluptates rerum sint vel
@@ -225,7 +233,7 @@ const UserListPage = () => {
                   explicabo cumque quas? Dicta,
                   optio. Praesentium!
                 </p>
-                <div className="mt-4 flex gap-4 text-sm text-gray-500">
+                <div className="mt-2 flex flex-wrap gap-2 text-xs text-gray-500 sm:mt-4 sm:gap-4 sm:text-sm">
                   <span className="flex gap-1">
                     <span>&#128077;</span>
                     <span>123</span>
@@ -236,7 +244,8 @@ const UserListPage = () => {
                   </span>
                   <span className="flex gap-1">
                     <span>&#128173;</span>
-                    <span>2024/03/21</span>
+                    <span className="hidden sm:inline">2024/03/21</span>
+                    <span className="sm:hidden">03/21</span>
                   </span>
                 </div>
               </div>
